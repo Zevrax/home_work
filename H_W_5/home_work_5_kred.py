@@ -8,8 +8,8 @@ pl_4 = sum / 60 + pr_1 * 4
 
 pl_1_2 = sum / 12 + pr_1 * 2
 
-spasce = 20
-spasce_2 = 40
+spasce = '10.2f'
+# spasce_2 = 40
 m = 00
 
 while m < 60:
@@ -17,10 +17,8 @@ while m < 60:
 
     if m < 13:
 
-        print(f"{m},{pl_2:{spasce}}, {pl_1_2:{spasce}}, {pr_1*2:{spasce}}")
+        print(f"{m:02}, {pl_2:{spasce}},  | {pl_1_2:{spasce}},  | {pr_1*2:{spasce}}")
 
     elif m > 13:
 
-        print(f"{m},{pl_2:{spasce}}, {pr_1*4:{spasce_2}}")
-
-
+        print(f"{m}, {pl_2:{spasce}},  | {pr_1*4:{spasce}}")

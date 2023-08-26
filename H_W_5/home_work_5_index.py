@@ -1,4 +1,4 @@
-str = int(input("максимум 15 символів"))
+str = input("максимум 15 символів")
 
 print(str[2])
 print(str[-2])
