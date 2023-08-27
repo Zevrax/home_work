@@ -1,17 +1,23 @@
+import random
 
-string = input("Введіть рядок: ")
+print("Привіт! Загадайте число від 0 до 100.")
+lower_bound = 0
+upper_bound = 100
+steps = 0
 
+while True:
+    guess = random.randint(lower_bound, upper_bound)
+    response = input(f"Чи є ваше число {guess}? (більше/менше/так): ")
 
-char = input("Введіть символ для пошуку: ")
-
-found_indices = []
-
-
-for i in range(len(string)):
-    if string[i] == char:
-        found_indices.append(i)
-
-if len(found_indices) > 0:
-    print(f"Символ '{char}' знайдений у рядку на позиціях: {', '.join(map(str, found_indices))}")
-else:
-    print(f"Символ '{char}' не знайдений у рядку.")
+    if response == "більше":
+        lower_bound = guess + 1
+        steps += 1
+    elif response == "менше":
+        upper_bound = guess - 1
+        steps += 1
+    elif response == "так":
+        steps += 1
+        print(f"Програма вгадала ваше число {guess} за {steps} кроків!")
+        break
+    else:
+        print("Будь ласка, введіть 'більше', 'менше' або 'так'.")

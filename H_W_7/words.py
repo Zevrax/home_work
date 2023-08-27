@@ -1,14 +1,21 @@
 
-input_list = input("Введіть список цілих чисел: ")
-numbers = list(map(int, input_list.split()))
+sentence = input("Введіть речення, в якому більше двох слів: ")
 
 
-min_index = numbers.index(min(numbers))
-max_index = numbers.index(max(numbers))
+words_list = sentence.split(" ")
 
 
-numbers[min_index], numbers[max_index] = numbers[max_index], numbers[min_index]
+words_list = [word for word in words_list if word]
 
 
-output = " ".join(map(str, numbers))
-print("Вихідні дані:\n" + output)
+words_list.sort()
+
+
+print("Індекс | Слово")
+print("-" * 20)
+for index, word in enumerate(words_list):
+    print(f"{index + 1:^7} | {word}")
+
+
+word_count = len(words_list)
+print(f"Кількість слів: {word_count}")
